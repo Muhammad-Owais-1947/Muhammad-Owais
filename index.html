@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Redirecting — Muhammad Owais Portfolio</title>
+
+  <style>
+    body {
+      font-family: "Segoe UI", Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background: linear-gradient(135deg, #0072ff, #00c6ff);
+      color: #fff;
+      margin: 0;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+    }
+
+    p {
+      font-size: 1.1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .loader {
+      border: 5px solid rgba(255, 255, 255, 0.3);
+      border-top: 5px solid #fff;
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      animation: spin 1s linear infinite;
+      margin-bottom: 1rem;
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    .countdown {
+      font-weight: bold;
+      font-size: 1.2rem;
+    }
+
+    a {
+      color: #fff;
+      text-decoration: underline;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Redirecting to Muhammad Owais Portfolio</h1>
+  <div class="loader"></div>
+  <p>You’ll be redirected in <span class="countdown" id="count">5</span> seconds...</p>
+  <p>If not, <a href="https://muhammad-owais.pages.dev">click here</a>.</p>
+
+  <script>
+    let seconds = 5;
+    const countdown = document.getElementById("count");
+
+    const interval = setInterval(() => {
+      seconds--;
+      countdown.textContent = seconds;
+      if (seconds <= 0) {
+        clearInterval(interval);
+        window.location.href = "https://muhammad-owais.pages.dev";
+      }
+    }, 1000);
+  </script>
+</body>
+</html>
